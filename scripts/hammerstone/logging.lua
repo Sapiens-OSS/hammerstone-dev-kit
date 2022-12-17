@@ -9,19 +9,19 @@ function mod:onload(logging)
 	local super_log = logging.log
 	logging.log = function(self, msg)
 		super_log(self, msg)
-		logUI:log("[Info] " .. msg)
+		logUI:log("[Info] " .. tostring(msg))
 	end
 
 	local super_warning = logging.warning
 	logging.warning = function(self, msg)
 		super_warning(self, msg)
-		logUI:log("[Warning] " .. msg)
+		logUI:log("[Warning] " .. tostring(msg))
 	end
 
 	local super_error = logging.error
 	logging.error = function(self, msg)
 		super_error(self, msg)
-		logUI:log("[Error] " .. msg)
+		logUI:log("[Error] " .. tostring(msg))
 	end
 
 end
