@@ -5,8 +5,7 @@ local vec4 = mjm.vec4
 
 local clientGameSettings = mjrequire "mainThread/clientGameSettings"
 local gameConstants = mjrequire "common/gameConstants"
-local uiCommon = mjrequire "mainThread/ui/uiCommon/uiCommon"
-local keyMapping = mjrequire "mainThread/keyMapping"
+local locale = mjrequire "common/locale"
 
 
 --local lightManager = mjrequire "mainThread/lightManager"
@@ -24,7 +23,7 @@ function logUI:load(gameUI, controller)
     mainView.color = vec4(0.0,0.0,0.0,0.7)
 
     
-    local consoleFont = Font(uiCommon.consoleFontName, 12)
+    local consoleFont = Font(locale:getConsoleFont(), 12)
 
     local logView = TextView.new(mainView)
     logView.font = consoleFont
